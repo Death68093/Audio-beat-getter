@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Beat Detection with Visualization</title>
+  <script src="https://unpkg.com/wavesurfer.js"></script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin: 20px;
+      background-color: #f5f5f5;
+      color: #333;
+    }
+    h1 {
+      color: #0066cc;
+    }
+    #waveform {
+      margin: 20px auto;
+      width: 80%;
+      height: 150px;
+      background-color: #fff;
+      border: 2px solid #ccc;
+      border-radius: 8px;
+    }
+    input[type="file"] {
+      margin: 20px;
+      padding: 10px;
+      border-radius: 5px;
+      border: 1px solid #ddd;
+      background-color: #f9f9f9;
+    }
+    button {
+      padding: 10px 20px;
+      background-color: #0066cc;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+      margin-top: 20px;
+    }
+    button:hover {
+      background-color: #005bb5;
+    }
+    pre {
+      background: #f4f4f4;
+      padding: 10px;
+      border-radius: 5px;
+      max-height: 300px;
+      overflow-y: scroll;
+      margin-top: 20px;
+    }
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    .result-section {
+      margin-top: 30px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Beat Detection with Visualization</h1>
+    <p>Upload a song, and see the beats on the waveform!</p>
+    
+    <input type="file" id="audioFile" accept="audio/*">
+    
+    <div id="waveform"></div>
+    
+    <div class="result-section">
+      <h3>Detected Beats (seconds):</h3>
+      <pre id="results"></pre>
+    </div>
+    
+    <!-- Export Button -->
+    <button id="exportBeatsBtn" style="display: none;">Export Beats</button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
